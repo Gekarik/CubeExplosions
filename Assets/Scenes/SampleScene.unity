@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 154782679}
   - component: {fileID: 154782678}
   - component: {fileID: 154782677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 201613050}
   - component: {fileID: 201613049}
   - component: {fileID: 201613048}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,8 @@ GameObject:
   - component: {fileID: 282484224}
   - component: {fileID: 282484223}
   - component: {fileID: 282484222}
-  m_Layer: 0
+  - component: {fileID: 282484225}
+  m_Layer: 2
   m_Name: Clicker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -361,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 282484219}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7829147, y: 4.2943306, z: 5.534355}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,9 +391,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 282484219}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da75677fb7ef9e4eb0c7073b80609db, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c749367852f9544faca23897208c1f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colors: []
 --- !u!114 &282484224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +407,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea1b9950498e35458de97f16bcda50f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionForce: 700
+  explosionForce: 350
   explosionRadius: 5
+--- !u!114 &282484225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282484219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfd1c3781954fe498c0080d111a0f2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -513,7 +527,7 @@ GameObject:
   - component: {fileID: 758173706}
   - component: {fileID: 758173705}
   - component: {fileID: 758173704}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -859,6 +873,7 @@ GameObject:
   - component: {fileID: 1272564801}
   - component: {fileID: 1272564800}
   - component: {fileID: 1272564799}
+  - component: {fileID: 1272564804}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -965,6 +980,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1272564804
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272564798}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1280123225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1166,7 @@ GameObject:
   - component: {fileID: 1393579759}
   - component: {fileID: 1393579758}
   - component: {fileID: 1393579757}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1229,7 +1271,7 @@ GameObject:
   - component: {fileID: 1839449905}
   - component: {fileID: 1839449904}
   - component: {fileID: 1839449903}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1625,7 +1667,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1995634310}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
