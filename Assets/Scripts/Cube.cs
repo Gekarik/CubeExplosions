@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Cube : MonoBehaviour
 {
+    private const float DivideValue = 2.0f;
     [SerializeField] private float _startChance = 1.0f;
     public float CurrentChance { get; private set; }
 
@@ -13,7 +14,7 @@ public class Cube : MonoBehaviour
 
     public void LowerChance(float currentChance)
     {
-        currentChance /= 2.0f;
+        currentChance /= DivideValue;
         CurrentChance = currentChance;
     }
 }

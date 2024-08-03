@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Colorizer : MonoBehaviour
 {
-    [SerializeField] List<Color> colors;
+    [SerializeField] List<Color> _colors;
 
     public void Colorize(Cube[] cubes)
     {
@@ -11,7 +11,7 @@ public class Colorizer : MonoBehaviour
         {
             if (cube.TryGetComponent(out Renderer renderer))
             {
-                if (colors == null || colors.Count == 0)
+                if (_colors == null || _colors.Count == 0)
                     renderer.material.color = Random.ColorHSV();
                 else
                     renderer.material.color = GetRandomColor();
@@ -21,7 +21,7 @@ public class Colorizer : MonoBehaviour
 
     private Color GetRandomColor()
     {
-        int index = Random.Range(0, colors.Count);
-        return colors[index];
+        int index = Random.Range(0, _colors.Count);
+        return _colors[index];
     }
 }

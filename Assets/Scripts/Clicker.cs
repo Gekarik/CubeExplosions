@@ -8,11 +8,16 @@ public class Clicker : MonoBehaviour
     [SerializeField] private int _cubeAmountBotBound = 2;
     [SerializeField] private int _cubeAmountTopBound = 6;
 
-    private Ray _ray;
     private Splitter _splitter;
     private Exploser _exploser;
     private Colorizer _colorizer;
     private InputReader _inputReader = new();
+    private Camera _mainCamera;
+
+    private void Awake()
+    {
+        _mainCamera = Camera.main;
+    }
 
     private void Start()
     {
@@ -35,9 +40,9 @@ public class Clicker : MonoBehaviour
     private bool TryGetCube(out Cube cube)
     {
         cube = null;
-        _ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(_ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit))
             return hit.collider.TryGetComponent(out cube);
 
         return false;
@@ -50,8 +55,8 @@ public class Clicker : MonoBehaviour
     private void ExploseCube(Cube cube)
     {
         int partAmount = GetCubeAmountRandomly();
-        Cube[] _createdCubes = _splitter.Split(cube, partAmount);
-        _exploser.ApplyExplosionForce(_createdCubes);
-        _colorizer.Colorize(_createdCubes);
+        Cube[] createdCubes = _splitter.Split(cube, partAmount);
+        _exploser.ApplyExplosionForce(createdCubes);
+        _colorizer.Colorize(createdCubes);
     }
 }
