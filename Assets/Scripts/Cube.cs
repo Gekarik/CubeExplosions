@@ -5,6 +5,7 @@ public class Cube : MonoBehaviour
 {
     private const float DivideValue = 2.0f;
     [SerializeField] private float _startChance = 1.0f;
+    public int CubeRank { get; private set; } = 1;
     public float CurrentChance { get; private set; }
 
     private void Awake()
@@ -12,9 +13,10 @@ public class Cube : MonoBehaviour
         CurrentChance = _startChance;
     }
 
-    public void LowerChance(float currentChance)
+    public void InitSmallerCube(float currentChance)
     {
         currentChance /= DivideValue;
         CurrentChance = currentChance;
+        CubeRank++;
     }
 }

@@ -17,10 +17,7 @@ public class Clicker : MonoBehaviour
     private void Awake()
     {
         _mainCamera = Camera.main;
-    }
 
-    private void Start()
-    {
         _exploser = GetComponent<Exploser>();
         _splitter = GetComponent<Splitter>();
         _colorizer = GetComponent<Colorizer>();
@@ -32,6 +29,8 @@ public class Clicker : MonoBehaviour
         {
             if (cube.CurrentChance >= GetRandomValue())
                 ExploseCube(cube);
+            else
+                _exploser.ApplyExplosionForce(cube);
 
             Destroy(cube.gameObject);
         }

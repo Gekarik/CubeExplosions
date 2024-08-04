@@ -7,7 +7,7 @@ public class Colorizer : MonoBehaviour
 
     public void Colorize(Cube[] cubes)
     {
-        foreach (var cube in cubes)
+        foreach (Cube cube in cubes)
         {
             if (cube.TryGetComponent(out Renderer renderer))
             {
