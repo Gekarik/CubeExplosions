@@ -1,10 +1,11 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Exploser), typeof(Splitter))]
+[RequireComponent(typeof(Exploser), typeof(Splitter),typeof(Colorizer))]
 public class Clicker : MonoBehaviour
 {
     private const float MinTotalChance = 0.0f;
     private const float MaxTotalChance = 1.0f;
+
     [SerializeField] private int _cubeAmountBotBound = 2;
     [SerializeField] private int _cubeAmountTopBound = 6;
 
@@ -25,7 +26,7 @@ public class Clicker : MonoBehaviour
 
     private void Update()
     {
-        if (_inputReader.LeftClick() && TryGetCube(out Cube cube))
+        if (_inputReader.IsLeftMouseButtonClick() && TryGetCube(out Cube cube))
         {
             if (cube.CurrentChance >= GetRandomValue())
                 ExploseCube(cube);

@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cube : MonoBehaviour
 {
     private const float DivideValue = 2.0f;
+
     [SerializeField] private float _startChance = 1.0f;
     public int CubeRank { get; private set; } = 1;
     public float CurrentChance { get; private set; }
@@ -15,6 +16,7 @@ public class Cube : MonoBehaviour
 
     public void InitSmallerCube(float currentChance)
     {
+        transform.localScale /= 2;
         currentChance /= DivideValue;
         CurrentChance = currentChance;
         CubeRank++;

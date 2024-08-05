@@ -9,7 +9,6 @@ public class Splitter : MonoBehaviour
         for (int i = 0; i < partAmount; i++)
         {
             var partOfCube = Instantiate(cube, cube.transform.position, Quaternion.identity);
-            partOfCube.transform.localScale /= 2;
             partOfCube.InitSmallerCube(cube.CurrentChance);
             createdCubes[i] = partOfCube;
         }

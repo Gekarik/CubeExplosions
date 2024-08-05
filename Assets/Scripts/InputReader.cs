@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class InputReader
 {
-    public bool LeftClick() => Input.GetMouseButtonDown(0);
+    public bool IsLeftMouseButtonClick() => Input.GetMouseButtonDown(0);
 }
